@@ -26,7 +26,7 @@ const updateComment = user_comments => {
     for (const user_comment of user_comments) {
         // Create the <dt> element
         const dt = document.createElement('dt');
-        dt.className = "border p-3";
+        dt.className = "p-3";
         dt.textContent = `${user_comment.name}, ${user_comment.date}`;
         commentContainer.appendChild(dt); // Append <dt> to <dl>
     

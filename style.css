@@ -1,34 +1,83 @@
-/*initial CSS syles*/
+/*initial CSS syles ---------------------------------------------------------*/
 *{
     margin: 0; 
     padding: 0;
     box-sizing: border-box;
 }
-.logo{
+#logo{
     height: 45px;
 }
 a{
     text-decoration: none !important;
 }
+i{
+    cursor: pointer;
+}
+select{
+    border: none;
+}
 
 
-/*default light theme*/
+
+/*Light & Dark theme ------------------------------------------------------------*/
+
+/*default light theme variables*/
 :root{
+    --header-color: white;
     --background-color: white;
     --text-color: black;
+    --border-color: #dee2e6;
+    --box-color: #adb5bd;
+    --invert: 0;
 }
+
+/*dark theme variables*/
 .dark-theme{
-    --background-color: #212529;
+    --header-color: #212529;
+    --background-color: #6c757d;
     --text-color: white;
+    --border-color: #6c757d;
+    --box-color: #212529;
+    --invert: 1;
 }
+
+/*the texts should have transparent background, so when switching theme, there wont be glitch effect*/
+p, h2, h4, a, span, label, li{
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+}
+
 /*the elements those should be changed when switching between light and dark themes*/
-body, nav, main, li a{
-    background-color: var(--background-color);
-    color: var(--text-color);
+body, main, footer{
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+
+/*header gonna have special background color, when it is in dark theme*/
+nav, select{
+    background-color: var(--header-color) !important;
+    color: var(--text-color) !important;
+}
+nav{
+    border-bottom: 1px solid var(--border-color) !important;
+}
+/*navbar toggle have hamburger line which we have to change color*/
+.navbar-toggler-icon {
+    filter: invert(var(--invert)); /* Changes to white */
+}
+
+/*comments or other box elements also gonna have special colors to differentiate*/
+dt {
+    border: 1px solid var(--border-color) !important;
+}
+dt, .card{
+    background-color: var(--box-color) !important;
+    color: var(--text-color) !important;
 }
 
 
-/*main section*/
+
+/*main section -----------------------------------------------------------------------*/
 .main-view{
     height: calc(100vh - 61px);
     background-image: url('src/background.jpg');
@@ -44,6 +93,7 @@ body, nav, main, li a{
     font-size: 5em;
     
 }
+
 /*covers the image with 0.6 opacity to make it dark*/
 .main-view::before{ 
     content: '';
@@ -57,9 +107,13 @@ body, nav, main, li a{
 main section{
     padding-bottom: 80px;
 }
+.main-content span{
+    color: orange !important;
+}
 
 
-/*contact form and its animation*/
+/*contact form and its animation---------------------------------------------------------------*/
+
 form i {
     cursor: pointer;
     transition: transform 0.2s;
@@ -69,12 +123,17 @@ form i:active{
 }
 
 
-/*location section*/
+/*location section--------------------------------------------------------------------------------*/
+
 .locations img{
     aspect-ratio: 1.5/ 1;
 }
 .carousel-caption h5, .carousel-caption p{
     text-shadow: 2px 2px 1px black;
+}
+.carousel-caption h5, 
+.carousel-caption p {
+    color: white !important;
 }
 .carousel-caption, .locationCarousel{
     z-index: 2;
@@ -90,13 +149,6 @@ form i:active{
 }
 
 
-/*price section*/
-#price-chart .container{
-    text-shadow: 0 0 10px black;
-}
-
-
-
 #signUp{
     position: fixed;
     top: 50%; 
@@ -107,7 +159,8 @@ form i:active{
 
 
 
-/*responcive design*/
+/*responcive design-------------------------------------------------------------------------*/
+
 @media only screen and (max-width: 652px){
     .main-content{
         font-size: 3em;

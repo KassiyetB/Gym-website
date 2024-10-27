@@ -70,7 +70,7 @@ nav{
 dt {
     border: 1px solid var(--border-color) !important;
 }
-dt, .card{
+dt, .card, #signUp{
     background-color: var(--box-color) !important;
     color: var(--text-color) !important;
 }

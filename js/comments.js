@@ -116,7 +116,7 @@ rating_stars.forEach(star=>{
 
 
 //comments form submit, save the data from user to comments object
-const form = document.getElementById("comment").addEventListener('submit', event => {
+document.getElementById("comment").addEventListener('submit', event => {
     event.preventDefault();
 
     const comments_list = JSON.parse(localStorage.getItem("comments")) || [];
@@ -139,10 +139,7 @@ const form = document.getElementById("comment").addEventListener('submit', event
         rated: rating
     });
     localStorage.setItem("comments", JSON.stringify(comments_list));
-    formSubmitAudio.play();
-
-    //reset everything
-    form.reset();
     rating = 0;
-    form.scrollIntoView({ behavior: "auto" });
+    window.location.reload();
+    event.target.closest("dt").scrollIntoView({ behavior: "instant" });
 });

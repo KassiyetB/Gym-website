@@ -12,7 +12,6 @@ const togglePlanScreen = event => {
   if(!storedUser){
     if(signUpWin.classList.contains('d-none')){
       signUpWin.classList.remove('d-none');
-      window.scrollTo(0, 0);
     }
     else{
       signUpWin.classList.add('d-none');

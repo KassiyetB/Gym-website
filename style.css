@@ -26,18 +26,18 @@ select{
     --header-color: white;
     --background-color: white;
     --text-color: black;
-    --border-color: #dee2e6;
-    --box-color: #adb5bd;
+    --border-color: #dee2e6; /*gray-300*/
+    --box-color: #adb5bd; /*gray-500*/
     --invert: 0;
 }
 
 /*dark theme variables*/
 .dark-theme{
-    --header-color: #212529;
-    --background-color: #6c757d;
+    --header-color: #212529; /*gray-900, dark*/
+    --background-color: #6c757d; /*gray-600, secondary*/
     --text-color: white;
-    --border-color: #6c757d;
-    --box-color: #212529;
+    --border-color: #6c757d; /*gray-600, secondary*/
+    --box-color: #212529; /*gray-900, dark*/
     --invert: 1;
 }
 

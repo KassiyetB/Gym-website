@@ -8,17 +8,34 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <title>contact</title>
         <style>
+            :root{
+                --background-color: #fff;
+                --box-color: #adb5bd; /*gray-500*/
+                --text-color: #000;
+            }
+            .dark-theme{
+                --background-color: #000;
+                --box-color: #212529; /*gray-900, dark*/
+                --text-color: #fff;
+            }
+            body{
+                height: 100vh;
+                background-color: var(--background-color);
+                color: var(--text-color);
+            }
+            .container{
+                background-color: var(--box-color);
+            }
             @media screen and (max-width:576px){
-                form{
-                    height: 100vh;
+                body{
+                    height: 100%;
                 }
-
             }
         </style>
     </head>
-    <body class="bg-black d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
-            <div class="container bg-dark text-white p-0 d-flex flex-column col-lg-8 col-xl-5">
-                <form class="p-5" >
+    <body class="d-flex flex-column justify-content-center align-items-center">
+            <div class="container p-5 d-flex flex-column col-lg-8 col-xl-5">
+                <form class="">
                     <a class="btn btn-secondary rounded-5" href="main.html" type="button"><i class='bx bx-arrow-back'></i></a>
                     <h1 class="text-center">Contact</h1>
 
@@ -43,11 +60,12 @@
                     </div>
 
                     <div class="d-flex justify-content-center">
-                        <input class="btn btn-primary mt-5" type="submit" value="submit">
+                        <input class="btn btn-primary mt-3" type="submit" value="submit">
                     </div>
                     
                 </form>
             </div>
             <script src="js/audio.js"></script>
+            <script src="js/switchLightDark.js"></script>
     </body>
 </html>

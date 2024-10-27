@@ -1,29 +1,41 @@
-//comment
-const user_comments = [
-    {
-        name: 'John Doe',
-        date: "October 10, 2022",
-        comment: "Joining this gym was the best decision I ever made! The trainers are incredibly supportive and have helped me achieve my fitness goals. I never thought I could feel this strong and confident!",
-        rated: 4
-    },
-    {
-        name: 'Sarah Lee',
-        date: "August 18, 2021",
-        comment: "The atmosphere at this gym is fantastic. Everyone is motivated, and the staff really make you feel at home. I’ve gained so much more than just physical strength!",
-        rated: 5
-    },
-    {
-        name: 'Michael Smith',
-        date: "January 6, 2020",
-        comment: "I love the variety of classes offered here. There’s something for everyone, no matter your fitness level. I've made so many friends and truly enjoy my workouts now.",
-        rated: 3
+//Function to initialize localStorage with initial data if it doesn't already exist
+function initializeLocalStorage() {
+    const existingData = localStorage.getItem("comments");
+    
+    if (!existingData) {
+        const comments_list = [
+            {
+                name: 'John Doe',
+                date: "October 10, 2022",
+                comment: "Joining this gym was the best decision I ever made! The trainers are incredibly supportive and have helped me achieve my fitness goals. I never thought I could feel this strong and confident!",
+                rated: 4
+            },
+            {
+                name: 'Sarah Lee',
+                date: "August 18, 2021",
+                comment: "The atmosphere at this gym is fantastic. Everyone is motivated, and the staff really make you feel at home. I’ve gained so much more than just physical strength!",
+                rated: 5
+            },
+            {
+                name: 'Michael Smith',
+                date: "January 6, 2020",
+                comment: "I love the variety of classes offered here. There’s something for everyone, no matter your fitness level. I've made so many friends and truly enjoy my workouts now.",
+                rated: 3
+            }
+        ];
+        localStorage.setItem("comments", JSON.stringify(comments_list));
     }
-];
-const updateComment = user_comments => {
-    const commentContainer = document.querySelector("dl");
+}
+initializeLocalStorage();
 
-    commentContainer.innerHTML = " ";
-    for (const user_comment of user_comments) {
+
+
+//Function to render the user list from localStorage
+const renderUserList = () => {
+    const commentContainer = document.querySelector("dl");
+    commentContainer.innerHTML = "";
+    const comments_list = JSON.parse(localStorage.getItem("comments")) || [];
+    for (const user_comment of comments_list) {
         // Create the <dt> element
         const dt = document.createElement('dt');
         dt.className = "p-3";
@@ -83,23 +95,32 @@ const updateComment = user_comments => {
     commentBlocks.forEach(el => el.addEventListener("click", toggleComment));
 
 }
+renderUserList();
 
-updateComment(user_comments);
 
-
+//calculates rating, when user clicks stars
 let rating = 0;
 const rating_stars = document.querySelectorAll("#rating-stars li");
 rating_stars.forEach(star=>{
+    //add eventListener to each of the stars
     star.addEventListener("click", event => {
+        //convert id to integer
         rating = parseInt(event.target.closest("li").id, 10);
         for (let i = 0; i < rating_stars.length; i++) {
+            //selecting icons of the li, and changing there type to filled star
             rating_stars[i].children[0].className = parseInt(rating_stars[i].id, 10) <= rating ? "bx bxs-star" : "bx bx-star";
         }
     });
 });
 
+
+
+//comments form submit, save the data from user to comments object
 const form = document.getElementById("comment").addEventListener('submit', event => {
     event.preventDefault();
+
+    const comments_list = JSON.parse(localStorage.getItem("comments")) || [];
+
     const nameInput = document.getElementById("comment-name");
     const commentInput = document.getElementById("comment-message");
 
@@ -111,23 +132,17 @@ const form = document.getElementById("comment").addEventListener('submit', event
     const comment = commentInput.value;
 
     // Push new comment with correct property name
-    user_comments.push({
+    comments_list.push({
         name,
         date: formattedDate,
         comment,
-        rated: rating // Use 'rated' instead of 'rate'
+        rated: rating
     });
+    localStorage.setItem("comments", JSON.stringify(comments_list));
     formSubmitAudio.play();
 
-    // Reset the rating and stars after submission
+    //reset everything
+    form.reset();
     rating = 0;
-    rating_stars.forEach(star => {
-        star.children[0].className = "bx bx-star"; // Reset all stars to unselected state
-    });
-
-    // Clear the input fields by setting their value to empty
-    nameInput.value = "";       // Reset the name input
-    commentInput.value = "";    // Reset the comment input
-
-    updateComment(user_comments);
+    form.scrollIntoView({ behavior: "auto" });
 });

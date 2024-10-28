@@ -7,14 +7,18 @@ const setTheme = (isDark) => {
     localStorage.setItem("theme", isDark ? "true" : "false");
 
     // Set logo and icon based on theme
-    logos.forEach(img => img.src = isDark ? "src/logo.png" : "src/logoLight.png");
-    lightDarkSwitchBtn.className = isDark ? "bx bx-moon" : "bx bx-sun";
+    if(lightDarkSwitchBtn){
+        logos.forEach(img => img.src = isDark ? "src/logo.png" : "src/logoLight.png");
+        lightDarkSwitchBtn.className = !isDark ? "bx bx-moon" : "bx bx-sun";
+    }
 };
 
 // Apply stored theme on page load
 setTheme(localStorage.getItem("theme") === "true");
 
 // Toggle theme on button click
-lightDarkSwitchBtn.addEventListener("click", () => {
-    setTheme(!document.body.classList.contains("dark-theme"));
-});
+if(lightDarkSwitchBtn){
+    lightDarkSwitchBtn.addEventListener("click", () => {
+        setTheme(!document.body.classList.contains("dark-theme"));
+    });
+}

@@ -13,19 +13,8 @@ function formatDate(date, loc) {
 }
 // Function to display the current date and time
 function displayDateTime() {
-    const location = document.getElementById("time-location");
-    const selectedColor = location.value;
-    let loc = "en-EN"
-    switch(selectedColor){
-        case "En":
-            loc = "en-EN";
-            break;
-        case "Ru":
-            loc = "ru-RU";
-            break;
-    }
     const now = new Date();
-    const formattedDate = formatDate(now, loc); // Format it
+    const formattedDate = formatDate(now, "en-EN"); // Format it
     document.getElementById('dateTime').innerHTML = formattedDate; // Display it
 }
 // Call the function to display the date and time

@@ -1,9 +1,10 @@
 # Gym Website
 
-A simple frontend gym website where users can apply online for gym membership, choose a location, select membership plans, and more. 
+A simple frontend gym website where users can apply online for gym membership, choose a location, select membership plans, and more.
 This site is responsive, with a dark and light mode theme, and saves user data locally. It is currently a frontend-only project with no backend.
 
 ## Features
+
 - **About Us Section**: Provides a brief overview of the gym's mission and values. The gym is dedicated to making fitness accessible, offering quality equipment, personalized training, and a supportive environment for all fitness levels. We aim to help every member achieve their health and fitness goals.
 - **Comments Section**: A section for users to share their feedback or thoughts about the gym. It also includes star ratings, allowing users to rate the gym from 0 to 5 stars.
 - **Location Selection**: Users can currently see three gym locations available on the platform.
@@ -26,3 +27,8 @@ This site is responsive, with a dark and light mode theme, and saves user data l
 1. Clone this repository:
    ```bash
    git clone https://github.com/KassiyetB/Gym-website.git
+   ```
+
+## Link to the Website
+
+**Link**: [kassiyetb.github.io/Gym-website/](https://kassiyetb.github.io/Gym-website/)

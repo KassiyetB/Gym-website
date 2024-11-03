@@ -24,8 +24,13 @@ const renderExercise = exercises =>{
     // Import container to display the exercise cards
     const container = document.getElementById("exercise-container");
     
+    //Error message if there are no elements in the exercises object
     if(exercises.length === 0){
-        container.innerHTML = "<h4 class='text-center'>No exercises found!</h4>";
+        container.innerHTML = "";
+        const message = document.createElement("h4");
+        message.className = "text-center";
+        message.innerText = "No exercises found!";
+        container.appendChild(message);
         document.body.style.height = "100vh";
         return;
     }else{

@@ -60,8 +60,26 @@ bodyPartBtns.forEach(btn => {
     });
 });
 
-// Filter exercises with search input
 
+// Filter exercises with search input
+const searchInput = document.getElementById("search");
+searchInput.addEventListener('keydown', event => {
+    if (event.key === "Enter") {
+        const query = searchInput.value.toLowerCase();
+
+        const filteredExercises = exercises.filter(exercise => {
+            return (
+                exercise.bodyPart.toLowerCase().includes(query) ||
+                exercise.name.toLowerCase().includes(query) ||
+                exercise.target.toLowerCase().includes(query)
+            );
+        });
+        renderExercise(filteredExercises);
+    }
+});
+
+
+// Display the exercises to the page
 const renderExercise = exercises =>{
     // Import container to display the exercise cards
     const container = document.getElementById("exercise-container");

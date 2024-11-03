@@ -3,25 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <title>Document</title>
-</head>
-<body class="bg-dark">
-    <header>
-        <h1 class="text-center">Exercises</h1>
-        <h5 class="text-center">If you are new to the gym, this page might help you by showing you some good exercises you can try!</h5>
-        <input type="search">
+    <style>
+        /*initials*/
+        *{
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #logo{
+            height: 45px;
+        }
+        a{
+            text-decoration: none !important;
+            cursor: pointer;
+        }
+        body{
 
-    </header>
-    <div id="exercise-container" class="row">
-        <div id="exercise-box" class="bg-secondary text-center p-3">
-            <img src="https://v2.exercisedb.io/image/QhBhxAd9i4M2iT" class="rounded mb-4" style="width: 90%;">
-            <h4>Crunch with feet anchored</h4>
-            <p>Body part: <span>waist</span></p>
-            <p>target area: <span>abs</span></p>
+        }
+        nav{
+            background-color: #6c757d;
+        }
+        #exercise-container p{
+            margin: 0;
+        }
+        #search{
+            border: none;
+        }
+        .exercise-box{
+            background-color: #dfdfdf;
+        }
+        nav p{
+            color: #aaa;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column align-items-center">
+    <nav class="navbar w-100 p-2 sticky-top text-white d-flex flex-column align-items-center">
+        <div class="row w-100">
+            <div class="col-12 col-lg-3 d-flex m-auto mb-2">
+                <a class="btn btn-secondary rounded-5 my-auto" href="index.html" type="button"><i class='bx bx-arrow-back'>back</i></a>
+                <h1 class="col-md-3 m-auto m-lg-0">Exercises</h1>
+            </div>
+            
+            <div class="col-12 col-md-8 col-lg-9 text-center d-flex space-around m-auto">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle pt-1" type="button" id="dropdownMenuButton" style="height: 30px;" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class='bx bx-filter'></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-1'></i>back</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-2'></i>cardio</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-3'></i>chest</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-4'></i>lower arms</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-1'></i>lower legs</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-2'></i>neck</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-3'></i>shoulders</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-4'></i>upper arms</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-3'></i>upper legs</a></li>
+                        <li><a class="dropdown-item" href="#"><i class='bx bx-option-4'></i>waist</a></li>
+                    </ul>
+                </div>
+                <input id="search" type="search" class="col-10 col-sm-11 col-lg-9 rounded" placeholder="Search" style="height: 30px;">
+            </div>
         </div>
+        
+        <div class="mt-3 text-center p-0">
+            <p>
+                If you are new to the gym, this page might help you by showing you some good exercises you can try!
+            </p>
+        </div>
+    </nav>
+    <div id="exercise-container" class="row d-flex justify-content-center gap-3 m-5">
     </div>
     <script src="js/exercises.js"></script>
 </body>
+<footer class="container">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <img id="logo" src="src/logoLight.png" alt="logo">
+        </div>
+    </div>
+    <div class="row pt-3 justify-content-center">
+        <div class="col-9">
+            <ul class="d-flex text-dark justify-content-around flex-wrap text-center list-unstyled">
+                <li class="p-2"><a href="https://www.facebook.com/">facebook</a></li>
+                <li class="p-2"><a href="https://www.instagram.com/">instagram</a></li>
+                <li class="p-2"><a href="https://x.com/?lang=en">twitter</a></li>
+                <li class="p-2">Phone number: +7(705)-475-17-16</li>
+                <li class="p-2">Email: hasiet.bolat@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row border-top border-2 justify-content-center py-3">
+        <p class="col-auto">Copyright ©2024 Gym. Design By Kassiyet Bolat</p>  
+    </div>
+</footer>
 </html>

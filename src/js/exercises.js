@@ -25,7 +25,7 @@ const renderExercise = exercises =>{
     const container = document.getElementById("exercise-container");
     
     if(exercises.length === 0){
-        container.innerHTML = "<h4>No exercises found!</h4>";
+        container.innerHTML = "<h4 class='text-center'>No exercises found!</h4>";
         document.body.style.height = "100vh";
         return;
     }else{

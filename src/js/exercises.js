@@ -31,6 +31,7 @@ const renderExercise = exercises =>{
     for(exercise of exercises){
         
         if(exercise.equipment === "assisted"){
+            document.body.style.height = "100vh";
             continue;
         }
         // Exercise box (card) container
@@ -62,7 +63,6 @@ const renderExercise = exercises =>{
 
         // Add exercise card to container
         container.appendChild(exerciseCard);
-        console.log(exercise);
     }
     return exercises;
 }

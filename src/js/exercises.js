@@ -26,11 +26,13 @@ const renderExercise = exercises =>{
     container.innerHTML = "";
     if(exercises.length === 0){
         container.innerHTML = "<h4>No exercises found!</h4>";
+        document.body.style.height = "100vh";
         return;
     }
     for(exercise of exercises){
         
         if(exercise.equipment === "assisted"){
+
             continue;
         }
         // Exercise box (card) container
@@ -62,7 +64,6 @@ const renderExercise = exercises =>{
 
         // Add exercise card to container
         container.appendChild(exerciseCard);
-        console.log(exercise);
     }
     return exercises;
 }

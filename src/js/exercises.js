@@ -32,11 +32,6 @@ const renderExercise = exercises =>{
     for(exercise of exercises){
         
         if(exercise.equipment === "assisted"){
-<<<<<<< HEAD
-
-=======
-            document.body.style.height = "100vh";
->>>>>>> 12caa2765466fb3bd4a216e12560aac2dc759138
             continue;
         }
         // Exercise box (card) container

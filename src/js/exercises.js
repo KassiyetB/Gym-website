@@ -23,11 +23,14 @@ const fetchData = async () => {
 const renderExercise = exercises =>{
     // Import container to display the exercise cards
     const container = document.getElementById("exercise-container");
-    container.innerHTML = "";
+    
     if(exercises.length === 0){
         container.innerHTML = "<h4>No exercises found!</h4>";
         document.body.style.height = "100vh";
         return;
+    }else{
+        container.innerHTML = "";
+        document.body.style.height ="initial";
     }
     for(exercise of exercises){
         

@@ -1,52 +1,52 @@
-const url = 'https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': 'abe1f9a9f9mshc8cc1d5f2b456dfp111760jsnf4125069d072',
-		'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
-	}
-};
-const fetchData = async () => {
-    try {
-        const response = await fetch(url, options);
+// const url = 'https://exercisedb.p.rapidapi.com/exercises?limit=10&offset=0';
+// const options = {
+// 	method: 'GET',
+// 	headers: {
+// 		'x-rapidapi-key': 'abe1f9a9f9mshc8cc1d5f2b456dfp111760jsnf4125069d072',
+// 		'x-rapidapi-host': 'exercisedb.p.rapidapi.com'
+// 	}
+// };
+// const fetchData = async () => {
+//     try {
+//         const response = await fetch(url, options);
         
-        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-        const jsonString = await response.text();
-        const data = JSON.parse(jsonString); 
-        return data; // Access your data as an object
-    } catch (error) {
-        console.error("Error:", error);
-    }
-}
-// const exercises = [
-//     {
-//         bodyPart: "waist",
-//         equipment: "body weight",
-//         gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
-//         id: "0001",
-//         name: "3/4 sit-up",
-//         secondaryMuscles: ['hip flexors', 'lower back'],
-//         target: "abs"
-//     },
-//     {
-//         bodyPart: "waist",
-//         equipment: "body weight",
-//         gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
-//         id: "0002",
-//         name: "sit-up",
-//         secondaryMuscles: ['hip flexors', 'lower back'],
-//         target: "abs"
-//     },
-//     {
-//         bodyPart: "upper legs",
-//         equipment: "body weight",
-//         gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
-//         id: "0003",
-//         name: "legs ",
-//         secondaryMuscles: ['hip flexors', 'lower back'],
-//         target: "legs"
-//     }   
-// ];
+//         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+//         const jsonString = await response.text();
+//         const data = JSON.parse(jsonString); 
+//         return data; // Access your data as an object
+//     } catch (error) {
+//         console.error("Error:", error);
+//     }
+// }
+const exercises = [
+    {
+        bodyPart: "waist",
+        equipment: "body weight",
+        gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
+        id: "0001",
+        name: "3/4 sit-up",
+        secondaryMuscles: ['hip flexors', 'lower back'],
+        target: "abs"
+    },
+    {
+        bodyPart: "waist",
+        equipment: "body weight",
+        gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
+        id: "0002",
+        name: "sit-up",
+        secondaryMuscles: ['hip flexors', 'lower back'],
+        target: "abs"
+    },
+    {
+        bodyPart: "upper legs",
+        equipment: "body weight",
+        gifUrl: "https://v2.exercisedb.io/image/PVjcbbo4xrl3Xf",
+        id: "0003",
+        name: "legs ",
+        secondaryMuscles: ['hip flexors', 'lower back'],
+        target: "legs"
+    }   
+];
 
 // Display the exercises to the page
 const renderExercise = exercises =>{
@@ -125,9 +125,14 @@ const searchFilter = exercises => {
 }
 //initial render to display all exercises
 //renderExercise(exercises);
-fetchData()
-.then(exercises => {
-    renderExercise(exercises);   // Render exercises
+// fetchData()
+// .then(exercises => {
+//     renderExercise(exercises);   // Render exercises
+//     dropdownFilter(exercises);    // Pass exercises to dropdown filter
+//     searchFilter(exercises);       // Pass exercises to search filter
+// });
+
+
+renderExercise(exercises);   // Render exercises
     dropdownFilter(exercises);    // Pass exercises to dropdown filter
-    searchFilter(exercises);       // Pass exercises to search filter
-});
+    searchFilter(exercises);

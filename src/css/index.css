@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 #logo{
     height: 45px;
 }
@@ -68,6 +69,7 @@ nav{
 
 /*comments or other box elements also gonna have special colors to differentiate*/
 dt {
+    cursor: pointer;
     border: 1px solid var(--border-color) !important;
 }
 dt, .card, #signUp{
@@ -80,7 +82,7 @@ dt, .card, #signUp{
 /*main section -----------------------------------------------------------------------*/
 .main-view{
     height: calc(100vh - 61px);
-    background-image: url('src/background.jpg');
+    background-image: url('../images/background.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size:cover;

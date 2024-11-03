@@ -1,0 +1,70 @@
+/*initials*/
+*{
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+#logo{
+    height: 45px;
+}
+a{
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+/*default light theme variables*/
+:root{
+    --header-color: white;
+    --background-color: white;
+    --text-color: black;
+    --border-color: #dee2e6; /*gray-300*/
+    --box-color: #adb5bd; /*gray-500*/
+    --invert: 0;
+}
+/*dark theme variables*/
+.dark-theme{
+    --header-color: #212529; /*gray-900, dark*/
+    --background-color: #6c757d; /*gray-600, secondary*/
+    --text-color: white;
+    --border-color: #6c757d; /*gray-600, secondary*/
+    --box-color: #212529; /*gray-900, dark*/
+    --invert: 1;
+}
+body {
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+nav{
+    background-color: var(--box-color) !important;
+}
+footer a, footer li{
+    color: var(--text-color) !important;
+}
+
+
+#exercise-container p{
+    margin: 0 !important;
+}
+#search{
+    border: none !important; 
+}
+.exercise-card{
+    width: 25% !important;
+    min-width: 150px !important;
+    background-color: var(--box-color) !important;
+}
+nav p{
+    color: var(--border-color) !important;
+}
+
+@media only screen and (max-width: 992px){
+    .exercise-card{
+        font-size: 0.7em !important;
+    }
+}
+@media only screen and (max-width: 428px){
+    .exercise-card{
+        width: 80% !important;
+        font-size: 0.7em !important;
+    }
+}

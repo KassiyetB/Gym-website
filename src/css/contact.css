@@ -1,0 +1,24 @@
+:root{
+    --background-color: #fff;
+    --box-color: #adb5bd; /*gray-500*/
+    --text-color: #000;
+}
+.dark-theme{
+    --background-color: #000;
+    --box-color: #212529; /*gray-900, dark*/
+    --text-color: #fff;
+}
+body{
+    height: 100vh;
+    background-color: var(--background-color) !important;
+    color: var(--text-color) !important;
+}
+.container{
+    background-color: var(--box-color) !important;
+}
+@media screen and (max-width:576px){
+    body{
+        height: 100%;
+        background-color: var(--box-color) !important;
+    }
+}

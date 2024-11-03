@@ -8,8 +8,11 @@ const setTheme = (isDark) => {
 
     // Set logo and icon based on theme
     if(lightDarkSwitchBtn){
-        logos.forEach(img => img.src = isDark ? "src/logo.png" : "src/logoLight.png");
+        logos.forEach(img => img.src = isDark ? "src/images/logo.png" : "src/images/logoLight.png");
         lightDarkSwitchBtn.className = !isDark ? "bx bx-moon" : "bx bx-sun";
+    }
+    else if(logos){
+        logos.forEach(img => img.src = isDark ? "src/images/logo.png" : "src/images/logoLight.png");
     }
 };
 

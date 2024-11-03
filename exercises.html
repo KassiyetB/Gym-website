@@ -30,11 +30,27 @@
         #search{
             border: none;
         }
-        .exercise-box{
+        .exercise-card{
+            width: 25%;
+            min-width: 150px;
             background-color: #dfdfdf;
         }
         nav p{
             color: #aaa;
+        }
+
+        /* Until lg screen*/
+        @media only screen and (max-width: 992px){
+            .exercise-card{
+                font-size: 0.7em;
+                background-color: #aaa;
+            }
+        }
+        @media only screen and (max-width: 428px){
+            .exercise-card{
+                width: 80%;
+                font-size: 0.7em;
+            }
         }
     </style>
 </head>
